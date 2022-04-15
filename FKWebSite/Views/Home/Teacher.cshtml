@@ -1,0 +1,192 @@
+﻿
+@section Headerimg{
+    <header class="header_area white-header">
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <a class="navbar-brand logo_h" href="~/home/Index">
+                        <img src="~/img/FaaelNew.jpeg" style="border-radius:50% ; height:50px" alt="" />
+                    </a>
+                    <button class="navbar-toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="icon-bar"></span> <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse offset"
+                         id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/home/index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/home/about">About</a>
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a href="#"
+                                   class="nav-link dropdown-toggle"
+                                   data-toggle="dropdown"
+                                   role="button"
+                                   aria-haspopup="true"
+                                   aria-expanded="false">All Services</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="~/home/Delegates">Delegates</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="~/home/RecommendedTable">Recommended Tables</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="~/home/CreateYourTable">Create Your Table</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/home/Contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="banner_content text-center">
+                            <h2>Teacher</h2>
+                            <div class="page_link">
+                                <a href="~/home/index">Home</a>
+                                <a href="~/home/AllTeachers">Teachers</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+<div class="container">
+    <center>
+        <br />
+        <div class="center">
+            <img src="~/img/Teachers/@ViewData["DocImage"]" height="200" alt="" style="border-radius:50%" />
+
+            <h2 class="mb-3 ">@ViewData["DocName"]</h2>
+
+            <p>
+                @ViewData["DocQuote"]
+            </p>
+
+        </div>
+    </center>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="whole-wrap">
+    <div class="container">
+        <div class="section-top-border">
+            <h3 class="mb-30 title_color">Block Quotes</h3>
+            <div class="row">
+                <div class="col-lg-12">
+                    <blockquote class="generic-blockquote">
+                        “Recently, the US Federal government banned online casinos from operating in America by making it illegal to
+                        transfer money to them through any US bank or payment system. As a result of this law, most of the popular
+                        online casino networks such as Party Gaming and PlayTech left the United States. Overnight, online casino
+                        players found themselves being chased by the Federal government. But, after a fortnight, the online casino
+                        industry came up with a solution and new online casinos started taking root. These began to operate under a
+                        different business umbrella, and by doing that, rendered the transfer of money to and from them legal. A major
+                        part of this was enlisting electronic banking systems that would accept this new clarification and start doing
+                        business with me. Listed in this article are the electronic banking”
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="whole-wrap">
+    <div class="container">
+        <div class="section-top-border">
+            <h3 class="mb-30 title_color">Courses</h3>
+            <div class="progress-table-wrap">
+                <div class="progress-table">
+                    <div class="table-head">
+                        <div class="serial">#</div>
+                        <div class="country">Code</div>
+                        <div class="visit">Name</div>
+                        <div class="visit">Link</div>
+
+                    </div>
+
+                    @foreach (var item in Model)
+                    {
+        <div class="table-row">
+            <div class="serial">@item.Id</div>
+            <div class="country"> @item.Code</div>
+            <div class="visit">@item.Name</div>
+            <div class="visit">
+                <a href=" @item.Videos">Click here</a>
+            </div>
+        </div>}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="whole-wrap">
+    <div class="container">
+        <div class="section-top-border">
+            <h3 class="mb-30 title_color">Other files</h3>
+            <div class="progress-table-wrap">
+                <div class="progress-table">
+                    <div class="table-head">
+                        <div class="serial">#</div>
+                        <div class="country">Description</div>
+                        <div class="visit">Link</div>
+                    </div>
+
+                    @foreach (var item in ViewBag.File)
+                    {
+        <div class="table-row">
+            <div class="serial">@item.Id</div>
+            <div class="country"> @item.Description</div>
+            <div class="visit">
+                <a href=" @item.Link">Click here</a>
+            </div>
+        </div>}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

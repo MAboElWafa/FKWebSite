@@ -1,0 +1,165 @@
+﻿@model IEnumerable<FKWebSite.Models.Course>
+<br />
+@section Headerimg{
+    <header class="header_area white-header">
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <a class="navbar-brand logo_h" href="~/home/Index">
+                        <img src="~/img/FaaelNew.jpeg" style="border-radius:50% ; height:50px" alt="" />
+                    </a>
+                    <button class="navbar-toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="icon-bar"></span> <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse offset"
+                         id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/home/index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/home/about">About</a>
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a href="#"
+                                   class="nav-link dropdown-toggle"
+                                   data-toggle="dropdown"
+                                   role="button"
+                                   aria-haspopup="true"
+                                   aria-expanded="false">All Services</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="~/home/Delegates">Delegates</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="~/home/RecommendedTable">Recommended Tables</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="~/home/CreateYourTable">Create Your Table</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/home/Contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="banner_content text-center">
+                            <h2>All Courses</h2>
+                            <div class="page_link">
+                                <a href="~/home/index">Home</a>
+                                <a href="~/home/AllCourses">All Courses</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+
+<div class="container border p-3">
+    <form asp-action="AllCourses">
+        <label>Search by courses' codes</label>
+        <input type="text" name="SearchCourses" class="form-control" placeholder="Enter The Course Code, Like (mth 101)" />
+        <br />
+        <center>
+            <button class="btn btn-primary">Search</button>
+        </center>
+    </form>
+</div>
+
+
+<br />
+<br />
+
+<div class="container">
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th>
+                    <p> Code </p>
+                </th>
+                <th>
+                    <p> Name </p>
+                </th>
+                <th>
+                    <p> PDFs </p>
+                </th>
+                <th>
+                    <p> Videos </p>
+                </th>
+                <th>
+                    <p> Date </p>
+                </th>
+                <th>
+                    <p> Referance </p>
+                </th>
+                <th>
+                    <p> Teacher Name </p>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Code)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        <a href="@Html.DisplayFor(modelItem => item.PDFs)">
+                            Click Here
+                        </a>
+                    </td>
+                    <td>
+                        <a href="@Html.DisplayFor(modelItem => item.Videos)">
+                            Click Here
+                        </a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        <a href="@Html.DisplayFor(modelItem => item.Reference)">
+                            Click Here
+                        </a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Doctor.Name)
+
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<br />
+<br />
+

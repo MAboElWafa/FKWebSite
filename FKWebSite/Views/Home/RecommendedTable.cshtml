@@ -1,0 +1,137 @@
+﻿@section Headerimg{
+    <header class="header_area white-header">
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <a class="navbar-brand logo_h" href="~/home/Index">
+                        <img src="~/img/FaaelNew.jpeg" style="border-radius:50% ; height:50px" alt="" />
+                    </a>
+                    <button class="navbar-toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="icon-bar"></span> <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse offset"
+                         id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/home/index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/home/about">About</a>
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a href="#"
+                                   class="nav-link dropdown-toggle"
+                                   data-toggle="dropdown"
+                                   role="button"
+                                   aria-haspopup="true"
+                                   aria-expanded="false">All Services</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="~/home/Delegates">Delegates</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="~/home/RecommendedTable">Recommended Tables</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="~/home/CreateYourTable">Create Your Table</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/home/Contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="banner_content text-center">
+                            <h2>Recommended Table</h2>
+                            <div class="page_link">
+                                <a href="~/home/index">Home</a>
+                                <a href="~/home/RecommendedTable">Recommended Table</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+<div class="container">
+    <center>
+        <br />
+        <div class="center">
+
+            <h2 class="mb-3 ">Recommended for you</h2>
+
+            <p>
+                At the table below you can find more easy ways to pass you journey!
+            </p>
+
+        </div>
+    </center>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="whole-wrap">
+    <div class="container">
+        <div class="section-top-border">
+            <h3 class="mb-30 title_color">Courses</h3>
+            <div class="progress-table-wrap">
+                <div class="progress-table">
+                    <div class="table-head">
+                        <div class="serial">#</div>
+                        <div class="visit">Name</div>
+                        <div class="country">Description</div>
+                        <div class="visit">Link</div>
+                    </div>
+
+                    @foreach (var item in Model)
+                    {
+                        <div class="table-row">
+                            <div class="serial">@item.Id</div>
+                            <div class="visit"> @item.Name</div>
+                            <div class="country">@item.Description</div>
+                            <div class="visit">
+                                <a href="@item.Link">Click Here</a>
+                            </div>
+                        </div>}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

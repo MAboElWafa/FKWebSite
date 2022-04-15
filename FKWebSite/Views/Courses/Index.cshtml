@@ -1,0 +1,78 @@
+﻿@model IEnumerable<FKWebSite.Models.Course>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<br />
+<center>
+    <h1>Home Page</h1>
+
+    <p>
+        <a class="btn btn-success" asp-action="Create">Create New Course</a>
+    </p>
+    <hr />
+</center>
+
+<div class="container">
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Code)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.PDFs)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Videos)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Reference)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Doctor.Name)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Code)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.PDFs)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Videos)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Reference)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Doctor.Name)
+                    </td>
+                    <td>
+                        <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,79 @@
+﻿@model FKWebSite.Models.Course
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<br />
+<center>
+
+    <h1>Edit</h1>
+    <hr />
+</center>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="Code" class="control-label"></label>
+                    <input asp-for="Code" class="form-control" />
+                    <span asp-validation-for="Code" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PDFs" class="control-label"></label>
+                    <input asp-for="PDFs" class="form-control" />
+                    <span asp-validation-for="PDFs" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Videos" class="control-label"></label>
+                    <input asp-for="Videos" class="form-control" />
+                    <span asp-validation-for="Videos" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Date" class="control-label"></label>
+                    <input asp-for="Date" class="form-control" />
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Reference" class="control-label"></label>
+                    <input asp-for="Reference" class="form-control" />
+                    <span asp-validation-for="Reference" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DoctorId" class="control-label"></label>
+                    <br />
+                    <select asp-for="DoctorId" class="form-control" asp-items="ViewBag.DoctorId"></select>
+                    <span asp-validation-for="DoctorId" class="text-danger"></span>
+                </div>
+                <br />
+                <center>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </center>
+            </form>
+        </div>
+    </div>
+    
+    <hr />
+
+    <center>
+        <a class="btn btn-success" asp-action="Index">Back to List</a>
+    </center>
+    <br />
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

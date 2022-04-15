@@ -1,0 +1,51 @@
+﻿@model FKWebSite.Models.Quote
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<br />
+<center>
+
+    <h1>Details</h1>
+    <hr />
+</center>
+
+<div class="container">
+    <div>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Image)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Quot)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Quot)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SubTitle)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SubTitle)
+            </dd>
+        </dl>
+    </div>
+
+    <div>
+        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.Id">Edit this quote</a> |
+        <a class="btn btn-success" asp-action="Index">Back to List</a>
+    </div>
+    <br />
+
+</div>

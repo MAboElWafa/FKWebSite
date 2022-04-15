@@ -1,0 +1,290 @@
+﻿
+@section Headerimg{
+    <header class="header_area white-header">
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <a class="navbar-brand logo_h" href="~/home/Index">
+                        <img src="~/img/FaaelNew.jpeg" style="border-radius:50% ; height:50px" alt="" />
+                    </a>
+                    <button class="navbar-toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="icon-bar"></span> <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse offset"
+                         id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/home/index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/home/about">About</a>
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a href="#"
+                                   class="nav-link dropdown-toggle"
+                                   data-toggle="dropdown"
+                                   role="button"
+                                   aria-haspopup="true"
+                                   aria-expanded="false">All Services</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="~/home/Delegates">Delegates</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="~/home/RecommendedTable">Recommended Tables</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="~/home/CreateYourTable">Create Your Table</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/home/Contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="banner_content text-center">
+                            <h2>Delegates</h2>
+                            <div class="page_link">
+                                <a href="~/home/index">Home</a>
+                                <a href="~/home/Delegates">Delegates</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+<section class="trainer_area section_gap_top">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="main_title">
+                    <h2 class="mb-3">The delegates</h2>
+                    <p>
+                        Replenish man have thing gathering lights yielding shall you
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <center>
+            <img style="border-radius:50%" ; height="300px" src="~/img/Delegates/bassam.jpeg" />
+            <br />
+            <br />
+            <p>
+                To our leader, who strived for our arrival here, we are grateful for all the effort you made for us and others on your journey .. God bless you always
+            </p>
+        </center>
+        <hr />
+
+        <section class="course_details_area section_gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 course_details_left">
+
+                        <div class="content_wrapper">
+
+
+                            <h4 class="title">Delegtes of 2021</h4>
+                            <div class="content">
+
+                                <div class="row justify-content-center d-flex align-items-center">
+                                    @foreach (var item in ViewBag.D2021)
+                                    {
+                        <div class="col-lg-3 col-md-6 col-sm-4 single-trainer">
+                            <div class="thumb d-flex justify-content-sm-center">
+                                <img class="img-fluid" src="~/img/Delegates/@item.Image" alt="" />
+                            </div>
+                            <div class="meta-text text-sm-center">
+                                <h4>@item.Name</h4>
+                                <p class="designation">@item.Year</p>
+                                <div class="mb-4">
+                                    <p>
+                                        @item.Department
+                                    </p>
+                                </div>
+                                <div class="align-items-center justify-content-center d-flex">
+                                    <a href="@item.Contact"><i class="ti-facebook"></i></a>
+
+                                </div>
+                            </div>
+                        </div>}
+                                </div>
+
+
+                            </div>
+
+                            <h4 class="title">Delegtes of 2020 </h4>
+                            <div class="row justify-content-center d-flex align-items-center">
+                                @foreach (var item in ViewBag.D2020)
+                                {
+                    <div class="col-lg-3 col-md-6 col-sm-4 single-trainer">
+                        <div class="thumb d-flex justify-content-sm-center">
+                            <img class="img-fluid" src="~/img/Delegates/@item.Image" alt="" />
+                        </div>
+                        <div class="meta-text text-sm-center">
+                            <h4>@item.Name</h4>
+                            <p class="designation">@item.Year</p>
+                            <div class="mb-4">
+                                <p>
+                                    @item.Department
+                                </p>
+                            </div>
+                            <div class="align-items-center justify-content-center d-flex">
+                                <a href="@item.Contact"><i class="ti-facebook"></i></a>
+
+                            </div>
+                        </div>
+                    </div>}
+                            </div>
+
+
+                            <h4 class="title">Delegtes of 2019</h4>
+                            <div class="content">
+
+                                <div class="row justify-content-center d-flex align-items-center">
+                                    @foreach (var item in ViewBag.D2019)
+                                    {
+                        <div class="col-lg-3 col-md-6 col-sm-4 single-trainer">
+                            <div class="thumb d-flex justify-content-sm-center">
+                                <img class="img-fluid" src="~/img/Delegates/@item.Image" alt="" />
+                            </div>
+                            <div class="meta-text text-sm-center">
+                                <h4>@item.Name</h4>
+                                <p class="designation">@item.Year</p>
+                                <div class="mb-4">
+                                    <p>
+                                        @item.Department
+                                    </p>
+                                </div>
+                                <div class="align-items-center justify-content-center d-flex">
+                                    <a href="@item.Contact"><i class="ti-facebook"></i></a>
+
+                                </div>
+                            </div>
+                        </div>}
+                                </div>
+
+
+                            </div>
+
+
+                            <h4 class="title">Delegtes of 2018</h4>
+                            <div class="content">
+
+                                <div class="row justify-content-center d-flex align-items-center">
+                                    @foreach (var item in ViewBag.D2018)
+                                    {
+                        <div class="col-lg-3 col-md-6 col-sm-4 single-trainer">
+                            <div class="thumb d-flex justify-content-sm-center">
+                                <img class="img-fluid" src="~/img/Delegates/@item.Image" alt="" />
+                            </div>
+                            <div class="meta-text text-sm-center">
+                                <h4>@item.Name</h4>
+                                <p class="designation">@item.Year</p>
+                                <div class="mb-4">
+                                    <p>
+                                        @item.Department
+                                    </p>
+                                </div>
+                                <div class="align-items-center justify-content-center d-flex">
+                                    <a href="@item.Contact"><i class="ti-facebook"></i></a>
+                                    @*<a href="#"><i class="ti-twitter"></i></a>
+                                        <a href="#"><i class="ti-linkedin"></i></a>
+                                        <a href="#"><i class="ti-pinterest"></i></a>*@
+                                </div>
+                            </div>
+                        </div>}
+                                </div>
+
+
+
+                                <h4 class="title">Delegtes of 2017</h4>
+                                <div class="content">
+
+                                    <div class="row justify-content-center d-flex align-items-center">
+                                        @foreach (var item in ViewBag.D2017)
+                                        {
+                            <div class="col-lg-3 col-md-6 col-sm-4 single-trainer">
+                                <div class="thumb d-flex justify-content-sm-center">
+                                    <img class="img-fluid" src="~/img/Delegates/@item.Image" alt="" />
+                                </div>
+                                <div class="meta-text text-sm-center">
+                                    <h4>@item.Name</h4>
+                                    <p class="designation">@item.Year</p>
+                                    <div class="mb-4">
+                                        <p>
+                                            @item.Department
+                                        </p>
+                                    </div>
+                                    <div class="align-items-center justify-content-center d-flex">
+                                        <a href="@item.Contact"><i class="ti-facebook"></i></a>
+
+                                    </div>
+                                </div>
+                            </div>}
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        @*<div class="row justify-content-center d-flex align-items-center">
+                    @foreach (var item in Model)
+                    {
+            <div class="col-lg-3 col-md-6 col-sm-4 single-trainer">
+                <div class="thumb d-flex justify-content-sm-center">
+                    <img class="img-fluid" src="~/img/Delegates/@item.Image" alt="" />
+                </div>
+                <div class="meta-text text-sm-center">
+                    <h4>@item.Name</h4>
+                    <p class="designation">@item.Year</p>
+                    <div class="mb-4">
+                        <p>
+                            @item.Department
+                        </p>
+                    </div>
+                    <div class="align-items-center justify-content-center d-flex">
+                        <a href="#"><i class="ti-facebook"></i></a>
+                        <a href="#"><i class="ti-twitter"></i></a>
+                        <a href="#"><i class="ti-linkedin"></i></a>
+                        <a href="#"><i class="ti-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>}
+                </div>*@
+    </div>
+</section>

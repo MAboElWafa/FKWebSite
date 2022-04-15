@@ -1,0 +1,57 @@
+﻿@model FKWebSite.Models.Quote
+
+@{
+    ViewData["Title"] = "Create";
+}
+<br />
+<center>
+
+    <h1>Quotes Page</h1>
+    <hr />
+</center>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Image" class="control-label"></label>
+                    <input asp-for="Image" class="form-control" />
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label> Quote</label>
+                    <input asp-for="Quot" class="form-control" />
+                    <span asp-validation-for="Quot" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SubTitle" class="control-label"></label>
+                    <input asp-for="SubTitle" class="form-control" />
+                    <span asp-validation-for="SubTitle" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <hr />
+
+    <center>
+        <a class="btn btn-success" asp-action="Index">Back to List</a>
+    </center>
+    <br />
+
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

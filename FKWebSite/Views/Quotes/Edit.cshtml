@@ -1,0 +1,56 @@
+﻿@model FKWebSite.Models.Quote
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<br />
+<center>
+
+    <h1>Edit</h1>
+    <hr />
+</center>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Image" class="control-label"></label>
+                    <input asp-for="Image" class="form-control" />
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Quot" class="control-label"></label>
+                    <input asp-for="Quot" class="form-control" />
+                    <span asp-validation-for="Quot" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SubTitle" class="control-label"></label>
+                    <input asp-for="SubTitle" class="form-control" />
+                    <span asp-validation-for="SubTitle" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<hr />
+
+<center>
+    <a class="btn btn-success" asp-action="Index">Back to List</a>
+</center>
+<br />
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
